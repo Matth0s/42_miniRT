@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 15:28:35 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 03:06:37 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:14:48 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static int	check_line_break(char *buff, int len)
 {

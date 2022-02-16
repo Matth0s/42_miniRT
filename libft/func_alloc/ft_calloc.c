@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 06:06:43 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 02:31:47 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:29:25 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

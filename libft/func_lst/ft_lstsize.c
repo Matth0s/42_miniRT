@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 21:40:14 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/03/18 17:02:57 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/10/01 18:14:22 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

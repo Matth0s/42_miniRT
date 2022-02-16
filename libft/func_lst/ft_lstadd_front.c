@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 21:08:34 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/15 18:10:27 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:14:56 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {

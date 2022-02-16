@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 22:46:39 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/03/18 17:02:44 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:14:59 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

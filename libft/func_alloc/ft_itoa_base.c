@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 12:44:47 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 02:39:09 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:13:04 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static void	make_str(int n, char *base, unsigned int pot, char **temp)
 {
@@ -46,7 +46,7 @@ char	*ft_itoa_base(int n, char *base)
 
 	if (ft_check_base(base))
 		return (NULL);
-	cont = ft_numdigt((int)ft_strlen(base), n);
+	cont = ft_numlen((int)ft_strlen(base), n);
 	temp = malloc((cont + 1) * sizeof(char));
 	if (!(temp))
 		return (NULL);

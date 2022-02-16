@@ -1,37 +1,65 @@
-SRC		=	./sources/miniRT.c \
-			\
-			./sources/make_mundo/make_mundo.c \
-			./sources/make_mundo/set_elem_I.c \
-			./sources/make_mundo/set_elem_II.c \
-			./sources/make_mundo/make_mundo_utils.c \
-			\
-			./sources/check_mundo/check_mundo.c \
-			./sources/check_mundo/check_elem_I.c \
-			./sources/check_mundo/check_elem_II.c \
-			\
-			./sources/init_render/init_render.c \
-			./sources/init_render/make_image.c \
-			./sources/init_render/ray_tracer.c \
-			./sources/init_render/intersect_elem/set_intersect.c \
-			./sources/init_render/intersect_elem/pl_intersect.c \
-			./sources/init_render/intersect_elem/sp_intersect.c \
-			./sources/init_render/intersect_elem/sq_intersect.c \
-			./sources/init_render/intersect_elem/tr_intersect.c \
-			./sources/init_render/intersect_elem/cy_intersect.c \
-			./sources/init_render/phong_ilum.c \
-			./sources/init_render/windows_control.c \
-			./sources/init_render/bitmap_control.c \
-			\
-			./sources/vector_oper/vector_oper_I.c \
-			./sources/vector_oper/vector_oper_II.c \
-			./sources/vector_oper/vector_oper_III.c \
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/02/16 05:44:49 by mmoreira          #+#    #+#              #
+#    Updated: 2022/02/16 07:45:15 by mmoreira         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-OBJ		=	${SRC:.c=.o}
 #--------------------------------------//---------------------------------------
+SRC_DIR	=	./sources \
+			./sources/make_mundo \
+			./sources/check_mundo \
+			./sources/init_render \
+			./sources/init_render/intersect_elem \
+			./sources/vector_oper
+
+SRC		=	miniRT.c \
+			\
+			make_mundo.c \
+			set_elem_I.c \
+			set_elem_II.c \
+			make_mundo_utils.c \
+			\
+			check_mundo.c \
+			check_elem_I.c \
+			check_elem_II.c \
+			\
+			init_render.c \
+			make_image.c \
+			ray_tracer.c \
+			\
+			set_intersect.c \
+			pl_intersect.c \
+			sp_intersect.c \
+			sq_intersect.c \
+			tr_intersect.c \
+			cy_intersect.c \
+			\
+			phong_ilum.c \
+			windows_control.c \
+			bitmap_control.c \
+			\
+			vector_oper_I.c \
+			vector_oper_II.c \
+			vector_oper_III.c \
+
+OBJ_DIR	=	./builds
+OBJ		=	$(patsubst %.c, $(OBJ_DIR)/%.o, $(SRC))
+
+INCD_DIR	=	-I ./includes \
+				-I ./libft
+INCD		=	miniRT.h \
+				structs.h
+#--------------------------------------//---------------------------------------
+vpath %.c $(SRC_DIR)
+vpath %.h $(INCD_DIR)
 
 NAME		=	miniRT
-
-INCLUDE		=	-I includes -I libft
 
 MODULE		=	./libft/libft.a
 
@@ -39,42 +67,45 @@ FLAGS		=	-Wall -Wextra -Werror
 
 MLX_FLAGS	=	-lbsd -lmlx -lXext -lX11 -lm
 
+RM			=	rm -rf
+
 CC			=	clang
 #--------------------------------------//---------------------------------------
-.c.o:
-	@${CC} ${FLAGS} -c $< -o ${<:.c=.o}
-	@echo "  Criando .o de "$<
-#--------------------------------------//---------------------------------------
 all:		$(NAME)
+
+
+$(NAME):	$(MODULE) $(OBJ)
+	$(CC) $(OBJ) $(FLAGS) $(INCD_DIR) $(MODULE) $(MLX_FLAGS) -o $(NAME)
+	@echo "\033[1;32m"
+	@echo "/ ************************************ \\"
+	@echo "|             miniRT criado            |"
+	@echo "\\ ************************************ /"
+	@echo "\033[0m"
 
 $(MODULE):
 	@make -C libft
 
-$(NAME):	$(MODULE) $(OBJ)
-	@$(CC) $(OBJ) $(FLAGS) $(INCLUDE) $(MODULE) $(MLX_FLAGS) -o $(NAME)
-	@echo ""
-	@echo "/ ************************************ \\"
-	@echo "|             miniRT criado            |"
-	@echo "\\ ************************************ /"
-	@echo ""
+$(OBJ_DIR)/%.o:	%.c $(INCD)
+	mkdir -p $(OBJ_DIR)
+	$(CC) -c -o $@ $(CFLAGS) $(INCD_DIR) $<
 #--------------------------------------//---------------------------------------
 clean:
-	@rm -rf $(OBJ)
-	@make clean -C libft
-	@echo ""
+	$(RM) $(OBJ)
+	make clean -C libft
+	@echo "\033[1;31m"
 	@echo "/ ************************************ \\"
 	@echo "|         Arquivos .o deletados        |"
 	@echo "\\ ************************************ /"
-	@echo ""
+	@echo "\033[0m"
 
 fclean:		clean
-	@rm -rf $(NAME)
-	@make aclean -C libft
-	@echo ""
+	$(RM) $(NAME)
+	make aclean -C libft
+	@echo "\033[1;31m"
 	@echo "/ ************************************ \\"
 	@echo "|            miniRT deletado           |"
 	@echo "\\ ************************************ /"
-	@echo ""
+	@echo "\033[0m"
 #--------------------------------------//---------------------------------------
 
 re:			fclean all

@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:14:50 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 02:48:14 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:14:05 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 char	*ft_utoa(unsigned int n)
 {

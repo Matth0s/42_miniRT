@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:06:03 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 02:44:09 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 13:29:00 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

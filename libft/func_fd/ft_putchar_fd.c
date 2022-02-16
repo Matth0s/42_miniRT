@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:09:05 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/03/18 16:42:01 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:14:34 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

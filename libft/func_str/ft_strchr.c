@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 20:48:33 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 03:23:37 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:16:36 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

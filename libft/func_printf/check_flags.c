@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 17:44:08 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 03:25:49 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:15:54 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static void	check_sin_zero(const char *str, t_flag *flag, int *i)
 {
@@ -45,7 +45,7 @@ static void	check_width(const char *str, va_list args, t_flag *flag, int *i)
 		if (ft_isdigit(*(str + *i + (*flag).j)))
 		{
 			(*flag).width = ft_atoi((str + *i + (*flag).j));
-			(*flag).j += ft_numdigt(10, (*flag).width);
+			(*flag).j += ft_numlen(10, (*flag).width);
 		}
 	}
 }
@@ -61,7 +61,7 @@ static void	check_press_num(const char *str, t_flag **flag, int *i)
 	if ((*(*flag)).press == 0)
 		(*(*flag)).j += k;
 	else
-		(*(*flag)).j += ft_numdigt(10, (*(*flag)).press) + k;
+		(*(*flag)).j += ft_numlen(10, (*(*flag)).press) + k;
 	if (*(str + *i + (*(*flag)).j) != '%')
 		(*(*flag)).zero = 0;
 }

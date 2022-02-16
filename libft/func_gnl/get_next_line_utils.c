@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 13:34:22 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 03:08:15 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:14:45 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 size_t	str_len(char *s)
 {

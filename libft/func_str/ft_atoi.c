@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 18:15:18 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 03:23:11 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:16:31 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

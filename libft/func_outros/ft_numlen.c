@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-int	ft_numdigt(int unsigned base, int n)
+int	ft_numlen(int unsigned base, int n)
 {
 	unsigned int	cont;
 	unsigned int	num;

@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:12:10 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/03/18 16:41:54 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:14:39 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

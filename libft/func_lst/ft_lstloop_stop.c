@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 21:08:34 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/16 20:43:33 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:15:15 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_lstloop_stop(t_list **lst)
 {

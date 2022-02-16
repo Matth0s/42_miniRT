@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   while_print.c                                      :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/19 18:44:37 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/09/20 10:16:22 by mmoreira         ###   ########.fr       */
+/*   Created: 2021/09/24 18:32:12 by mmoreira          #+#    #+#             */
+/*   Updated: 2021/09/24 18:37:38 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	while_print(char *str, int len, int sig)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	j;
+	int	i;
 
-	j = 0;
-	if (sig == 0)
-		while (j++ < len)
-			ft_putchar_fd(*(str + j - 1), 1);
-	else if (sig == 1)
-		while (j++ < len)
-			ft_putchar_fd(' ', 1);
-	else
-		while (j++ < len)
-			ft_putchar_fd('0', 1);
+	i = 0;
+	while (*(s1 + i) != '\0' || *(s2 + i) != '\0')
+	{
+		if (*(s1 + i) != *(s2 + i))
+			return (*(s1 + i) - *(s2 + i));
+		i++;
+	}
+	return (0);
 }

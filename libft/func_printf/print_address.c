@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:44:15 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 03:22:01 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:16:01 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static void	make_str(unsigned long n, unsigned long p, char *base, char **temp)
 {

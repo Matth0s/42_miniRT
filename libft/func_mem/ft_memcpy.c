@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 19:35:26 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 03:01:53 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:15:38 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

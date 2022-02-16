@@ -6,17 +6,17 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:23:31 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 03:26:07 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/10/01 18:11:58 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <sys/resource.h>
-# include <stddef.h>
-# include <stdlib.h>
 # include <unistd.h>
+# include <stdlib.h>
+# include <stddef.h>
 # include <stdarg.h>
+# include <sys/resource.h>
 # define BUFFER_SIZE 42
 
 typedef struct s_list
@@ -35,6 +35,7 @@ typedef struct s_flag
 	int				j;
 }					t_flag;
 
+char				*ft_addchar(char *str, char c);
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_itoa_base(int n, char *base);
 char				*ft_itoa(int n);
@@ -61,6 +62,12 @@ void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char *s, int fd);
 
+size_t				str_len(char *s);
+size_t				str_copy(char *dst, char *src, size_t size);
+char				*str_join(char *s1, char *s2);
+char				*str_dup(char *s);
+int					get_next_line(int fd, char **line);
+
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstclear(t_list **lst, void (*del)(void*));
@@ -82,23 +89,10 @@ void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
 
-double				ft_atod(const char *nptr);
-int					ft_atoi(const char *nptr);
-void				ft_bzero(void *s, size_t n);
-char				*ft_strchr(const char *s, int c);
-size_t				ft_strlcat(char *dst, const char *src, size_t size);
-size_t				ft_strlcpy(char *dst, const char *src, size_t size);
-size_t				ft_strlen(const char *s);
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
-char				*ft_strrchr(const char *s, int c);
-char				*ft_strnstr(const char *big, const char *little,
-						size_t len);
-
-size_t				str_len(char *s);
-size_t				str_copy(char *dst, char *src, size_t size);
-char				*str_join(char *s1, char *s2);
-char				*str_dup(char *s);
-int					get_next_line(int fd, char **line);
+int					ft_check_base(char *base);
+void				ft_free_split(char **str);
+int					ft_numlen(int unsigned base, int n);
+int					ft_splitlen(char **str);
 
 int					print_address(va_list args, int *i, t_flag flag);
 int					print_char(int c, int *i, t_flag flag);
@@ -113,8 +107,17 @@ int					print_type(const char *str, va_list args, int *i,
 						t_flag flag);
 int					ft_printf(const char *str, ...);
 
-int					ft_check_base(char *base);
-void				ft_free_split(char **str);
-int					ft_numdigt(int unsigned base, int n);
+double				ft_atod(const char *nptr);
+int					ft_atoi(const char *nptr);
+void				ft_bzero(void *s, size_t n);
+char				*ft_strchr(const char *s, int c);
+int					ft_strcmp(char *s1, char *s2);
+size_t				ft_strlcat(char *dst, const char *src, size_t size);
+size_t				ft_strlcpy(char *dst, const char *src, size_t size);
+size_t				ft_strlen(const char *s);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
+char				*ft_strrchr(const char *s, int c);
+char				*ft_strnstr(const char *big, const char *little,
+						size_t len);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:44:18 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/03/21 11:46:19 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:16:04 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	print_char(int c, int *i, t_flag flag)
 {

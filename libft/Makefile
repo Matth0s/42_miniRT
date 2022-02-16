@@ -1,96 +1,107 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/09/20 09:50:28 by mmoreira          #+#    #+#              #
+#    Updated: 2021/09/27 01:00:43 by mmoreira         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRC		=	./func_alloc/ft_calloc.c ./func_alloc/ft_itoa_base.c \
-			./func_alloc/ft_itoa.c ./func_alloc/ft_split.c \
-			./func_alloc/ft_strdup.c ./func_alloc/ft_strjoin.c \
-			./func_alloc/ft_strmapi.c ./func_alloc/ft_strtrim.c \
-			./func_alloc/ft_substr.c ./func_alloc/ft_utoa_base.c \
-			./func_alloc/ft_utoa.c \
-			\
-			./func_char/ft_isalnum.c ./func_char/ft_isalpha.c \
-			./func_char/ft_isascii.c ./func_char/ft_isdigit.c \
-			./func_char/ft_isprint.c ./func_char/ft_isspace.c \
-			./func_char/ft_tolower.c ./func_char/ft_toupper.c \
-			\
-			./func_mem/ft_memccpy.c ./func_mem/ft_memchr.c \
-			./func_mem/ft_memcmp.c ./func_mem/ft_memcpy.c \
-			./func_mem/ft_memmove.c ./func_mem/ft_memset.c \
-			\
-			./func_fd/ft_putchar_fd.c ./func_fd/ft_putendl_fd.c \
-			./func_fd/ft_putnbr_fd.c ./func_fd/ft_putstr_fd.c \
-			\
-			./func_str/ft_atod.c ./func_str/ft_atoi.c \
-			./func_str/ft_bzero.c ./func_str/ft_strchr.c \
-			./func_str/ft_strlcat.c ./func_str/ft_strlcpy.c \
-			./func_str/ft_strlen.c ./func_str/ft_strncmp.c \
-			./func_str/ft_strnstr.c ./func_str/ft_strrchr.c \
-			\
-			./func_gnl/get_next_line_utils.c ./func_gnl/get_next_line.c \
-			\
-			./func_printf/check_flags.c ./func_printf/init_struct.c \
-			./func_printf/print_type.c ./func_printf/ft_printf.c \
-			./func_printf/print_address.c ./func_printf/print_char.c \
-			./func_printf/print_hex.c ./func_printf/print_int.c \
-			./func_printf/print_string.c ./func_printf/print_uint.c \
-			./func_printf/while_print.c \
-			\
-			./func_outros/ft_numdigt.c ./func_outros/ft_check_base.c \
-			./func_outros/ft_free_split.c\
-			\
-			./func_lst/ft_lstadd_back.c ./func_lst/ft_lstadd_front.c \
-			./func_lst/ft_lstclear.c ./func_lst/ft_lstdelone.c \
-			./func_lst/ft_lstfirst.c ./func_lst/ft_lstiter.c \
-			./func_lst/ft_lstlast.c ./func_lst/ft_lstloop_start.c \
-			./func_lst/ft_lstloop_stop.c ./func_lst/ft_lstmap.c \
-			./func_lst/ft_lstnew.c ./func_lst/ft_lstsize.c \
+SRC_DIR	=	./func_alloc \
+			./func_char \
+			./func_fd \
+			./func_gnl \
+			./func_lst \
+			./func_mem \
+			./func_outros \
+			./func_printf \
+			./func_str \
 
-OBJ		=	${SRC:.c=.o}
+SRC		=	ft_addchar.c ft_calloc.c ft_itoa_base.c ft_itoa.c ft_split.c \
+			ft_strdup.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_substr.c \
+			ft_utoa_base.c ft_utoa.c \
+			\
+			ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
+			ft_isspace.c ft_tolower.c ft_toupper.c \
+			\
+			ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
+			\
+			get_next_line_utils.c get_next_line.c \
+			\
+			ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
+			ft_lstfirst.c ft_lstiter.c ft_lstlast.c ft_lstloop_start.c \
+			ft_lstloop_stop.c ft_lstmap.c ft_lstnew.c ft_lstsize.c \
+			\
+			ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c \
+			ft_memset.c \
+			\
+			ft_check_base.c ft_free_split.c ft_numlen.c ft_splitlen.c \
+			\
+			check_flags.c init_struct.c print_type.c ft_printf.c \
+			print_address.c print_char.c print_hex.c print_int.c \
+			print_string.c print_uint.c while_print.c \
+			\
+			ft_atod.c ft_atoi.c ft_bzero.c ft_strchr.c ft_strcmp.c \
+			ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
+			ft_strrchr.c
+
+OBJ_DIR	=	./builds
+OBJ		=	$(patsubst %.c, $(OBJ_DIR)/%.o, $(SRC))
+
+
+INCD	=	libft.h
 #--------------------------------------//---------------------------------------
+vpath %.c $(SRC_DIR)
+
 NAME	=	libft.a
 
-FLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror
+
+RM		=	rm -rf
 
 CC		=	clang
 #--------------------------------------//---------------------------------------
-.c.o:
-	@${CC} ${FLAGS} -c $< -o ${<:.c=.o}
-	@echo "  Criando .o de "$<
-#--------------------------------------//---------------------------------------
 all:		$(NAME)
 
-$(NAME):	$(OBJ) libft.h
-	@ar -rcs $(NAME) $(OBJ)
-	@echo ""
+$(NAME):	$(OBJ) $(INCD)
+	ar -rcs $(NAME) $(OBJ)
+	@echo "\033[1;32m"
 	@echo "/ ************************************ \\"
 	@echo "|            libft.a criada            |"
 	@echo "\\ ************************************ /"
-	@echo ""
+	@echo "\033[0m"
+
+$(OBJ_DIR)/%.o:	%.c $(INCD)
+	mkdir -p $(OBJ_DIR)
+	$(CC) -c -o $@ $(CFLAGS) -I ./ $<
 #--------------------------------------//---------------------------------------
 clean:
-	@rm -rf $(OBJ)
-	@echo ""
+	$(RM) $(OBJ_DIR)
+	@echo "\033[1;31m"
 	@echo "/ ************************************ \\"
 	@echo "|      Arquivos libft .o deletados     |"
 	@echo "\\ ************************************ /"
-	@echo ""
+	@echo "\033[0m"
 
 aclean:
-	@rm -rf $(NAME)
-	@echo ""
+	$(RM) $(NAME)
+	@echo "\033[1;31m"
 	@echo "/ ************************************ \\"
 	@echo "|           libft.a deletada           |"
 	@echo "\\ ************************************ /"
-	@echo ""
+	@echo "\033[0m"
 
 fclean:		clean aclean
-
 #--------------------------------------//---------------------------------------
 
 re:			fclean all
 
 git:
-	git add .
-	git status
-	git commit -m "$m"
-	git push
+	@git add .
+	@git status
+	@git commit -m "$m"
 
 .PHONY:		all clean aclean fclean re git

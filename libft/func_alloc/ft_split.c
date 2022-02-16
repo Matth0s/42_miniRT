@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 15:42:32 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/20 02:42:46 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:13:32 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 static char	*sep_clear(char const *s, char c)
 {

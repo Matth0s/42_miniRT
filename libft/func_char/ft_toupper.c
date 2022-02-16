@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 22:38:19 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/03/19 15:56:02 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:14:30 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

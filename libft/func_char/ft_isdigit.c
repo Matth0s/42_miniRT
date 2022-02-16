@@ -6,11 +6,11 @@
 /*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 00:46:00 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/06 19:37:17 by mmoreira         ###   ########.fr       */
+/*   Updated: 2021/09/20 10:14:18 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
