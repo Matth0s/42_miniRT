@@ -1,0 +1,37 @@
+Resolução de Tela  |  Largura da Tela  |  Altura da Tela
+R                           400                300
+
+Luz Ambiente  |  Intensidade da Luz  |  Cor da Luz
+A                       0.2             255,255,255
+
+Camera  |  Posição da Camera  |  Vetor Diretor  |  Campo de Visão em Graus
+c               0,8,0               0,-8,0                   80
+
+Luz da Cena  |  Posição da Luz  | Intensidade da Luz  |  Cor da Luz
+l                   0,8,8                 0.5            255,255,255
+
+Esfera da Cena  |  Centro da Esfera  |  Diametro da Esfera  |  Cor da Esfera
+sp                      0,0,0                    8                0,255,0
+
+Plano da Cena  |  Ponto do Plano  |  Vetor Normal ao Plano  |  Cor do Plano
+pl                    0,-2,0                 0,1,0               0,255,0
+
+Quadrado da Cena  |  Centro do Quadrado  |  Vetor Normal ao Quadrado  |  Tamanho do Lado do Quadrado  |  Cor do Quadrado
+sq                       0,0,0                      0,0,1                           10                      0,255,0
+
+Cilindros da Cena  |  Base do Cilindro  |  Vetor Orientação Cilindro  |  Diametro do Cilindro  |  Altura do Cilindro  |  Cor do Cilindro
+cy                         0,-4,0                   0,1,0                         8                       8                  0,255,0
+
+Triangulo da Cena  |  Pronta 1 do Triangulo  |  Pronta 2 do Triangulo  |  Pronta 3 do Triangulo  |  Cor do Triangulo
+tr                          -2,-2,0                    2,-2,0                    0,2,0                   0,255,0
+
+Calculador de Circunferencias de Cameras para Efeitos de Rotação:
+rt         0,0,0           0,1,0        16       30        -2        80
+
+rt    :  Identificador
+0,0,0 :  Centro da Rotação
+0,1,0 :  Vetor Normal a Rotação
+16    :  Numero de Cameras
+30    :  Diametro da Rotação
+-2    :  Distancia da Rotação ao Centro da Rotação
+80    :  Campo de Visão das Cameras em Graus
