@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 01:38:01 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/26 18:25:37 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 07:56:31 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,15 @@ typedef struct s_cam
 	t_vet	drct;
 	double	ang;
 }			t_cam;
+
+typedef struct s_rot
+{
+	t_vet	orig;
+	t_vet	norm;
+	double	diam;
+	double	heig;
+	double	ang;
+}			t_rot;
 
 typedef struct s_pl
 {
@@ -154,6 +163,8 @@ typedef struct s_mundo
 	t_abnt	A;
 	int		c;
 	t_list	*cams;
+	int		rt;
+	t_list	*rots;
 	int		l;
 	t_list	*lamps;
 	int		o;

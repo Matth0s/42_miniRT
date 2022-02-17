@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 15:55:00 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/24 04:03:14 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 10:02:55 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@
 # define C_ESPECULAR 100
 
 # define LEFT_ARROW 65361
+# define UP_ARROW 65362
 # define RIGHT_ARROW 65363
+# define DOWN_ARROW 65364
 # define ESC_BUTTON 65307
 
 # include <mlx.h>
@@ -60,6 +62,7 @@ int		set_square(char **info, t_mundo *mundo);
 int		set_sphere(char **info, t_mundo *mundo);
 int		set_plane(char **info, t_mundo *mundo);
 int		set_cams(char **info, t_mundo *mundo);
+int		set_rotation(char **info, t_mundo *mundo);
 int		set_lamps(char **info, t_mundo *mundo);
 int		set_abnt(char **info, t_mundo *mundo);
 int		set_screen(char **info, t_mundo *mundo);

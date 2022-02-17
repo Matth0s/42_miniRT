@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   vector_oper_II.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 01:50:12 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/27 01:48:01 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 04:41:48 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../includes/miniRT.h"
+#include "miniRT.h"
 
 void	vet_norm(t_vet *vet)
 {

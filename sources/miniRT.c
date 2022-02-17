@@ -3,17 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:29:26 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/27 01:47:00 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 08:14:10 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../includes/miniRT.h"
+#include "miniRT.h"
 
 void	free_mundo(t_mundo *mundo)
 {
+	t_list	*lst;
+
+	lst = mundo->rots;
+	while(lst)
+	{
+		ft_lstclear((t_list**)&lst->vol, free);
+		lst = lst->next;
+	}
+	ft_lstclear(&mundo->rots, free);
 	ft_lstclear(&mundo->cams, free);
 	ft_lstclear(&mundo->lamps, free);
 	ft_lstclear(&mundo->objs, free);
@@ -25,6 +34,8 @@ static void	set_mundo(t_mundo *mundo)
 	mundo->a = 0;
 	mundo->c = 0;
 	mundo->cams = NULL;
+	mundo->rt = 0;
+	mundo->rots = NULL;
 	mundo->l = 0;
 	mundo->lamps = NULL;
 	mundo->o = 0;

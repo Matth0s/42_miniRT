@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   vector_oper_III.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 01:52:56 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/27 01:48:05 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 04:41:48 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../includes/miniRT.h"
+#include "miniRT.h"
 
 t_vet	vet_color_mult(t_vet v1, t_vet v2)
 {

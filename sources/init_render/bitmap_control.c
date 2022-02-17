@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   bitmap_control.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 02:00:23 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/27 01:48:38 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 10:05:14 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../includes/miniRT.h"
+#include "miniRT.h"
 
 static void	bitmap_write(int fd, t_bitmap bmp)
 {
@@ -66,7 +66,7 @@ static int	bitmap_open(char *name)
 	return (fd);
 }
 
-static int	bitmap_create(t_img *img, int *R, int i)
+static int	bitmap_create(t_img *img, int *R, int i, int j)
 {
 	t_bitmap	bmp;
 	char		*name;
@@ -76,21 +76,21 @@ static int	bitmap_create(t_img *img, int *R, int i)
 	numb = ft_itoa(i);
 	name = ft_strjoin("imagem_", numb);
 	fd = bitmap_open(name);
+	free(numb);
+	free(name);
 	if (fd == -1)
-	{
-		free(numb);
-		free(name);
 		return (0);
-	}
 	bitmap_set(fd, R, &bmp);
 	if (i == 1)
 		ft_printf("/******************\n");
-	ft_printf("|  Criando o bitmap da camera %d\n", i);
+	ft_printf("|  Criando o bitmap da camera %d", i);
+	if (j)
+		ft_printf(" da rotação %d", j);
+	write(1, "\n", 1);
+
 	i = R[1];
 	while (--i >= 0)
 		write(fd, &img->addr[i * img->line_len], img->line_len);
-	free(numb);
-	free(name);
 	close(fd);
 	return (1);
 }
@@ -98,28 +98,28 @@ static int	bitmap_create(t_img *img, int *R, int i)
 void	bitmap_control(t_hook *loop, t_mundo *mundo)
 {
 	t_list	*imgs;
-	int		R[2];
-	int		i;
+	t_list	*lst;
+	int		i[2];
 
-	i = 1;
-	R[0] = mundo->R[0];
-	R[1] = mundo->R[1];
-	free_mundo(mundo);
+	i[1] = 0;
 	imgs = loop->imgs;
 	while (imgs)
 	{
-		if (!(bitmap_create((t_img *)imgs->vol, R, i)))
-			ft_printf("|  Deu merda na criação da imagem %d\n", i);
+		i[0] = 0;
+		lst = (t_list*)imgs->vol;
+		while (lst)
+		{
+			if (!(bitmap_create((t_img *)lst->vol, mundo->R, ++i[0], i[1])))
+				ft_printf("|  Deu merda na criação de uma das imagem\n");
+			mlx_destroy_image(loop->mlx, ((t_img *)lst->vol)->ptr);
+			lst = lst->next;
+		}
+		ft_lstclear((t_list**)&imgs->vol, free);
 		imgs = imgs->next;
-		i++;
-	}
-	imgs = loop->imgs;
-	while (imgs)
-	{
-		mlx_destroy_image(loop->mlx, ((t_img *)imgs->vol)->ptr);
-		imgs = imgs->next;
+		i[1]++;
 	}
 	ft_printf("|  Criação de todos os bitmap completa\n\\__________________\n");
 	ft_lstclear(&loop->imgs, free);
+	free_mundo(mundo);
 	free(loop->mlx);
 }

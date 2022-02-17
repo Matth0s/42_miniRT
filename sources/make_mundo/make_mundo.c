@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   make_mundo.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 02:17:34 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/27 01:48:15 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 06:23:09 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../includes/miniRT.h"
+#include "miniRT.h"
 
 static int	set_element(char **info, t_mundo *mundo)
 {
@@ -25,6 +25,8 @@ static int	set_element(char **info, t_mundo *mundo)
 		return (set_lamps(info, mundo));
 	else if (*(str) == 'c' && ft_strlen(str) == 1)
 		return (set_cams(info, mundo));
+	else if (*(str) == 'r' && *(str + 1) == 't' && ft_strlen(str) == 2)
+		return (set_rotation(info, mundo));
 	else if (*(str) == 'p' && *(str + 1) == 'l' && ft_strlen(str) == 2)
 		return (set_plane(info, mundo));
 	else if (*(str) == 's' && *(str + 1) == 'p' && ft_strlen(str) == 2)

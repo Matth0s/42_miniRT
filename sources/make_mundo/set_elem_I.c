@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   set_elem_I.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 02:28:30 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/27 01:48:21 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 06:09:50 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../includes/miniRT.h"
+#include "miniRT.h"
 
 int	set_screen(char **info, t_mundo *mundo)
 {

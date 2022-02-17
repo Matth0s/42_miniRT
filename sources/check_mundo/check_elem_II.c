@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_elem_II.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 03:08:17 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/27 01:48:32 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 04:41:48 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../includes/miniRT.h"
+#include "miniRT.h"
 
 int	check_obj_cy(t_cy *cylinder, int i)
 {

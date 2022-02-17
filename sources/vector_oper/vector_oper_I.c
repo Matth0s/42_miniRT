@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   vector_oper_I.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 01:33:35 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/27 01:47:55 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 04:41:48 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../includes/miniRT.h"
+#include "miniRT.h"
 
 t_vet	vet_create(double x, double y, double z)
 {

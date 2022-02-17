@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   make_image.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 03:53:03 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/27 01:48:43 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 04:41:48 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../includes/miniRT.h"
+#include "miniRT.h"
 
 static void	image_pixel_put(t_img *img, int x, int y, t_vet color)
 {

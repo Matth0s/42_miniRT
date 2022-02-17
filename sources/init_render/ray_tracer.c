@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ray_tracer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 03:38:03 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/27 01:48:48 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 04:41:48 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../includes/miniRT.h"
+#include "miniRT.h"
 
 static t_vet	pixel_drct(t_mundo *mundo, t_view view, int x, int y)
 {

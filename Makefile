@@ -6,7 +6,7 @@
 #    By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 05:44:49 by mmoreira          #+#    #+#              #
-#    Updated: 2022/02/16 07:45:15 by mmoreira         ###   ########.fr        #
+#    Updated: 2022/02/17 10:52:05 by mmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC		=	miniRT.c \
 			make_mundo.c \
 			set_elem_I.c \
 			set_elem_II.c \
+			set_rotation.c \
 			make_mundo_utils.c \
 			\
 			check_mundo.c \
@@ -114,6 +115,5 @@ git:
 	git add .
 	git status
 	git commit -m "$m"
-	git push
 
 .PHONY:		all clean fclean re git

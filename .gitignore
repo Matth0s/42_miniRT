@@ -1,0 +1,25 @@
+###########
+# Objetos #
+###########
+
+*.o
+builds/
+
+###############
+# Executaveis #
+###############
+
+*.out
+miniRT
+
+###############
+# libft files #
+###############
+
+libft/builds/
+libft/libft.a
+
+##########
+# Outros #
+##########
+
