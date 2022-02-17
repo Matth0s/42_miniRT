@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   pl_intersect.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmoreira <mmoreira@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 03:21:28 by mmoreira          #+#    #+#             */
-/*   Updated: 2021/04/27 01:49:20 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 21:55:09 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../../includes/miniRT.h"
+#include "miniRT.h"
 
-void	pl_intersection_I(t_pl *pl, t_ray *ray)
+void	pl_intersection(t_pl *pl, t_ray *ray)
 {
 	t_vet	v1;
 	double	i[3];
@@ -21,7 +21,7 @@ void	pl_intersection_I(t_pl *pl, t_ray *ray)
 	if (vet_dot(pl->norm, ray->drct))
 	{
 		if (vet_dot(pl->norm, ray->drct) > 0)
-			pl->norm = vet_mult_div(pl->norm, -1, 1);
+			pl->norm = vet_mult(pl->norm, -1);
 		i[0] = vet_dot(pl->norm, ray->orig);
 		i[1] = vet_dot(pl->norm, pl->orig);
 		i[2] = vet_dot(pl->norm, ray->drct);
@@ -30,10 +30,10 @@ void	pl_intersection_I(t_pl *pl, t_ray *ray)
 		{
 			ray->t = t;
 			ray->norm = pl->norm;
-			v1 = vet_mult_div(ray->drct, ray->t, 1);
-			ray->hit = vet_sum_sub(ray->orig, v1, 1);
-			v1 = vet_mult_div(ray->norm, EPSILON, 1);
-			ray->hit = vet_sum_sub(ray->hit, v1, 1);
+			v1 = vet_mult(ray->drct, ray->t);
+			ray->hit = vet_sum(ray->orig, v1);
+			v1 = vet_mult(ray->norm, EPSILON);
+			ray->hit = vet_sum(ray->hit, v1);
 			ray->color = pl->color;
 		}
 	}

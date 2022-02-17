@@ -6,7 +6,7 @@
 #    By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 05:44:49 by mmoreira          #+#    #+#              #
-#    Updated: 2022/02/17 10:52:05 by mmoreira         ###   ########.fr        #
+#    Updated: 2022/02/17 18:48:55 by mmoreira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,9 @@ SRC		=	miniRT.c \
 			windows_control.c \
 			bitmap_control.c \
 			\
+			matrix_oper_I.c \
 			vector_oper_I.c \
-			vector_oper_II.c \
-			vector_oper_III.c \
+			vector_oper_II.c 
 
 OBJ_DIR	=	./builds
 OBJ		=	$(patsubst %.c, $(OBJ_DIR)/%.o, $(SRC))

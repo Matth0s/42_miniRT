@@ -6,7 +6,7 @@
 /*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:29:26 by mmoreira          #+#    #+#             */
-/*   Updated: 2022/02/17 08:14:10 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 22:24:09 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	free_mundo(t_mundo *mundo)
 	t_list	*lst;
 
 	lst = mundo->rots;
-	while(lst)
+	while (lst)
 	{
-		ft_lstclear((t_list**)&lst->vol, free);
+		ft_lstclear((t_list **)&lst->vol, free);
 		lst = lst->next;
 	}
 	ft_lstclear(&mundo->rots, free);
@@ -30,7 +30,7 @@ void	free_mundo(t_mundo *mundo)
 
 static void	set_mundo(t_mundo *mundo)
 {
-	mundo->R[2] = 0;
+	mundo->rsl[2] = 0;
 	mundo->a = 0;
 	mundo->c = 0;
 	mundo->cams = NULL;

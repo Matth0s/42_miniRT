@@ -6,7 +6,7 @@
 /*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 15:55:00 by mmoreira          #+#    #+#             */
-/*   Updated: 2022/02/17 10:02:55 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 19:25:04 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,15 @@
 
 //___________________________Operações_Com_Vetores
 t_vet	vet_create(double x, double y, double z);
-t_vet	vet_sum_sub(t_vet v1, t_vet v2, int i);
-t_vet	vet_mult_div(t_vet v1, double n, int i);
+t_vet	vet_sum(t_vet v1, t_vet v2);
+t_vet	vet_sub(t_vet v1, t_vet v2);
+t_vet	vet_mult(t_vet v1, double n);
+t_vet	vet_div(t_vet v1, double n);
 
 void	vet_norm(t_vet *vet);
 double	vet_dot(t_vet v1, t_vet v2);
 t_vet	vet_cross(t_vet v1, t_vet v2);
-t_vet	vet_mat_dot(t_mat mat, t_vet vet);
+t_vet	mat_dot_vet(t_mat mat, t_vet vet);
 
 t_vet	vet_color_mult(t_vet v1, t_vet v2);
 void	vet_color_norm(t_vet *vet, int i);
@@ -75,22 +77,22 @@ int		check_obj_tr(t_tr *triangle, int i);
 int		check_obj_sq(t_sq *square, int i);
 int		check_obj_sp(t_sp *sphere, int i);
 int		check_obj_pl(t_pl *plane, int i);
-int		check_objs_I(t_mundo *mundo);
+int		check_objs_i(t_mundo *mundo);
 int		check_cams(t_mundo *mundo);
 int		check_lamps(t_mundo *mundo);
 int		check_screan_abnt(t_mundo *mundo);
 
 int		check_color(t_vet vet);
-int		error_print_II(int indicator, int i);
-int		error_print_I(int indicator, int i);
+int		error_print_ii(int indicator, int i);
+int		error_print_i(int indicator, int i);
 int		check_mundo(t_mundo *mundo);
 
 //___________________________Calculadores_De_interseptação
-void	cy_intersection_I( t_cy *cy, t_ray *ray);
-void	tr_intersection_I( t_tr *tr, t_ray *ray);
-void	sq_intersection_I(t_sq *sq, t_ray *ray);
-void	sp_intersection_I( t_sp *sp, t_ray *ray);
-void	pl_intersection_I(t_pl *pl, t_ray *ray);
+void	cy_intersection( t_cy *cy, t_ray *ray);
+void	tr_intersection( t_tr *tr, t_ray *ray);
+void	sq_intersection(t_sq *sq, t_ray *ray);
+void	sp_intersection( t_sp *sp, t_ray *ray);
+void	pl_intersection(t_pl *pl, t_ray *ray);
 void	set_intersection(t_list *objs, t_ray *ray);
 
 //___________________________Criador_Da_Imagem

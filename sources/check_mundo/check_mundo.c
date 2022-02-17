@@ -23,7 +23,7 @@ int	check_color(t_vet vet)
 	return (1);
 }
 
-int	error_print_II(int indicator, int i)
+int	error_print_ii(int indicator, int i)
 {
 	ft_printf("Error\n");
 	if (indicator == 1)
@@ -46,7 +46,7 @@ int	error_print_II(int indicator, int i)
 	return (0);
 }
 
-int	error_print_I(int indicator, int i)
+int	error_print_i(int indicator, int i)
 {
 	ft_printf("Error\n");
 	if (indicator == 1)
@@ -81,7 +81,7 @@ int	check_mundo(t_mundo *mundo)
 		return (0);
 	if (!(check_cams(mundo)))
 		return (0);
-	if (!(check_objs_I(mundo)))
+	if (!(check_objs_i(mundo)))
 		return (0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 02:17:34 by mmoreira          #+#    #+#             */
-/*   Updated: 2022/02/17 06:23:09 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 21:47:02 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,25 @@
 
 static int	set_element(char **info, t_mundo *mundo)
 {
-	char	*str;
-
-	str = *(info);
-	if (*(str) == 'R' && ft_strlen(str) == 1)
+	if (*(*info) == 'R' && ft_strlen(*info) == 1)
 		return (set_screen(info, mundo));
-	else if (*(str) == 'A' && ft_strlen(str) == 1)
+	else if (*(*info) == 'A' && ft_strlen(*info) == 1)
 		return (set_abnt(info, mundo));
-	else if (*(str) == 'l' && ft_strlen(str) == 1)
+	else if (*(*info) == 'l' && ft_strlen(*info) == 1)
 		return (set_lamps(info, mundo));
-	else if (*(str) == 'c' && ft_strlen(str) == 1)
+	else if (*(*info) == 'c' && ft_strlen(*info) == 1)
 		return (set_cams(info, mundo));
-	else if (*(str) == 'r' && *(str + 1) == 't' && ft_strlen(str) == 2)
+	else if (*(*info) == 'r' && *(*info + 1) == 't' && ft_strlen(*info) == 2)
 		return (set_rotation(info, mundo));
-	else if (*(str) == 'p' && *(str + 1) == 'l' && ft_strlen(str) == 2)
+	else if (*(*info) == 'p' && *(*info + 1) == 'l' && ft_strlen(*info) == 2)
 		return (set_plane(info, mundo));
-	else if (*(str) == 's' && *(str + 1) == 'p' && ft_strlen(str) == 2)
+	else if (*(*info) == 's' && *(*info + 1) == 'p' && ft_strlen(*info) == 2)
 		return (set_sphere(info, mundo));
-	else if (*(str) == 's' && *(str + 1) == 'q' && ft_strlen(str) == 2)
+	else if (*(*info) == 's' && *(*info + 1) == 'q' && ft_strlen(*info) == 2)
 		return (set_square(info, mundo));
-	else if (*(str) == 't' && *(str + 1) == 'r' && ft_strlen(str) == 2)
+	else if (*(*info) == 't' && *(*info + 1) == 'r' && ft_strlen(*info) == 2)
 		return (set_triangle(info, mundo));
-	else if (*(str) == 'c' && *(str + 1) == 'y' && ft_strlen(str) == 2)
+	else if (*(*info) == 'c' && *(*info + 1) == 'y' && ft_strlen(*info) == 2)
 		return (set_cylinder(info, mundo));
 	else
 		return (0);

@@ -6,14 +6,14 @@
 /*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 01:38:01 by mmoreira          #+#    #+#             */
-/*   Updated: 2022/02/17 07:56:31 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 22:34:49 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
-# include "./../libft/libft.h"
+# include "libft.h"
 
 //_____Structs_Dos_Operadores
 typedef struct s_vet
@@ -54,6 +54,7 @@ typedef struct s_rot
 {
 	t_vet	orig;
 	t_vet	norm;
+	double	cams;
 	double	diam;
 	double	heig;
 	double	ang;
@@ -158,9 +159,9 @@ typedef struct s_bitmap
 //_____Struct_Principal_Do_Programa
 typedef struct s_mundo
 {
-	int		R[3];
+	int		rsl[3];
 	int		a;
-	t_abnt	A;
+	t_abnt	ablig;
 	int		c;
 	t_list	*cams;
 	int		rt;

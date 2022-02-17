@@ -6,7 +6,7 @@
 /*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 03:56:55 by mmoreira          #+#    #+#             */
-/*   Updated: 2022/02/17 10:11:10 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 22:24:09 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ static void	adapt_screen(void *ptr, t_mundo *mundo)
 	int	y;
 
 	mlx_get_screen_size(ptr, &x, &y);
-	if (mundo->R[0] > x)
-		mundo->R[0] = x;
-	if (mundo->R[1] > y)
-		mundo->R[1] = y;
+	if (mundo->rsl[0] > x)
+		mundo->rsl[0] = x;
+	if (mundo->rsl[1] > y)
+		mundo->rsl[1] = y;
 }
 
 static void	image_rotation_cams(t_mundo *mundo, t_hook *loop, t_list *lst)
@@ -37,7 +37,7 @@ static void	image_rotation_cams(t_mundo *mundo, t_hook *loop, t_list *lst)
 	{
 		i[0] = 0;
 		lst = NULL;
-		cams = (t_list*)rots->vol;
+		cams = (t_list *)rots->vol;
 		while (cams)
 		{
 			ft_printf("|  Renderizando a imagem da camera %d", ++i[0]);

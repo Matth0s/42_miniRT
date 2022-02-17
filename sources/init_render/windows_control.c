@@ -6,7 +6,7 @@
 /*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 02:06:34 by mmoreira          #+#    #+#             */
-/*   Updated: 2022/02/17 10:04:12 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 22:24:09 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,14 @@ int	windows_control(t_hook *loop, t_mundo *mundo)
 	int		width;
 	int		height;
 
-	width = mundo->R[0];
-	height = mundo->R[1];
+	width = mundo->rsl[0];
+	height = mundo->rsl[1];
 	free_mundo(mundo);
 	loop->wind = mlx_new_window(loop->mlx, width, height, "MiniRT");
 	imgs = loop->imgs;
 	while (imgs)
 	{
-		ft_lstloop_start((t_list**)&imgs->vol);
+		ft_lstloop_start((t_list **)&imgs->vol);
 		imgs = imgs->next;
 	}
 	ft_lstloop_start(&loop->imgs);

@@ -6,7 +6,7 @@
 /*   By: mmoreira <mmoreira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 02:28:17 by mmoreira          #+#    #+#             */
-/*   Updated: 2022/02/17 04:41:48 by mmoreira         ###   ########.fr       */
+/*   Updated: 2022/02/17 19:21:50 by mmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,8 @@ int	set_triangle(char **info, t_mundo *mundo)
 		free(tr);
 		return (0);
 	}
-	v1 = vet_sum_sub(tr->p2, tr->p1, 0);
-	v2 = vet_sum_sub(tr->p3, tr->p1, 0);
+	v1 = vet_sub(tr->p2, tr->p1);
+	v2 = vet_sub(tr->p3, tr->p1);
 	tr->norm = vet_cross(v1, v2);
 	tr->type = TRIANGLE;
 	ft_lstadd_back(&mundo->objs, ft_lstnew(tr));
